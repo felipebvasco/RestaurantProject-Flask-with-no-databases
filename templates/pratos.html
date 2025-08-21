@@ -1,0 +1,32 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+<table class="table table-dark">
+  <thead class="thead-default">
+    <tr>
+      <th>Nome</th>
+      <th>Proteína</th>
+      <th>Peso</th>
+      <th>Origem</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for prato in pratos %}
+    <tr>
+      <td>{{ prato.nome }}</td>
+      <td>{{ prato.proteina }}</td>
+      <td>{{ prato.peso }}</td>
+      <td>{{ prato.origem }}</td>
+    {% endfor %}
+    </tr>
+  </tbody>
+</table>
+<form method="post" action="{{url_for('intermediaria')}}">
+  <input type="hidden" name="nova_tela" value="index">
+  <button type="submit" class="btn btn-secondary">Voltar</button>
+</form>
+<p></p>
+<form method="post" action="{{url_for('intermediaria')}}" >
+  <input type="hidden" name="nova_tela" value="novo_prato">
+  <button type="submit" class="btn btn-secondary">Novo Prato</button>
+</form>
+{% endblock %}

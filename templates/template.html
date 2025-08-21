@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1">
+        <title> Restaurante </title>
+        <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}" 
+    </head>
+    <body class="bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <a class="navbar-brand">
+            <img src={{ url_for('static', filename='logo2.jpg')}} width="45" height="45" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link" name="nova_tela" href={{url_for('index')}} value="index" method="post">Home</a>
+            <a class="nav-item nav-link" name="btn-pagprato" href={{url_for('pratos')}}>Pratos</a>
+            <a class="nav-item nav-link" name="btn-pagbebida" href={{url_for('bebidas')}}>Bebidas</a>
+            <a class="nav-item nav-link" name="btn-paginfo" href={{url_for('quem_somos')}}>Quem Somos</a>
+            </div>
+        </div>
+        </nav>
+        <!-- </header> -->
+        <div class="container">
+        
+
+
+        
+ 
+
+        {% block conteudo %} {% endblock %}
+        </div>
+    </body>
+</html>

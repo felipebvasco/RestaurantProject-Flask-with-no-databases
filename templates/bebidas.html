@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<table class="table table-dark">
+  <thead class="thead-default">
+    <tr>
+      <th>Nome</th>
+      <th>Base</th>
+      <th>Tamanho</th>
+      <th>Álcoolica</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for bebida in bebidas %}
+    <tr>
+      <td>{{ bebida.nome }}</td>
+      <td>{{ bebida.base }}</td>
+      <td>{{ bebida.tamanho }}</td>
+      <td>{{ bebida.alcool }}</td>
+    {% endfor %}
+    </tr>
+  </tbody>
+</table>
+<form method="post" action="{{url_for('intermediaria')}}">
+  <input type="hidden" name="nova_tela" value="index">
+  <button type="submit" class="btn btn-secondary">Voltar</button>
+</form>
+<p></p>
+<form method="post" action="{{url_for('intermediaria')}}">
+  <input type="hidden" name="nova_tela" value="nova_bebida">
+  <button type="submit" class="btn btn-secondary">Nova Bebida</button>
+</form>
+{% endblock %}

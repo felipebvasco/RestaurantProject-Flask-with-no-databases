@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+{% with messages = get_flashed_messages() %}
+            {% if messages %} 
+                <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <div class="container">
+        <p class="lead text-light">
+            Nosso Restaurante...
+        </p>
+        <p class="text-light">
+            Nosso restaurante loremipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.
+        </p>
+        <p class="text-light">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.
+        </p>
+    </div>
+        <img src={{ url_for('static', filename='restaurante.jpg')}} class="img-fluid">
+    <div class="container">
+        <p></p>
+        <p class=" lead text-light"> Temos variedades de bebidas para matar sua sede</p>
+        <p class="text-light"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
+        <form method="post" action="{{url_for('intermediaria')}}">
+            <input type="hidden" name="nova_tela" value="bebidas">
+            <button type="submit" class="btn btn-secondary">Cardápio Bebidas</button>   
+        </form>
+        <p></p>
+        <p class=" lead text-light"> Temos variedades de Pratos para você se deliciar </p>
+        <p class="text-light"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E Lorem ipsum dolor sit amet, consectetur adipiscing elit. E
+        <form method="post" action="{{url_for('intermediaria')}}">
+            <input type="hidden" name="nova_tela" value="pratos">
+            <button type="submit" class="btn btn-secondary">Cardápio Pratos</button>
+        </form>
+    </div>
+{% endblock %}
